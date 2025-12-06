@@ -1,0 +1,10 @@
+
+[opener]
+edit = [{ run = 'nvim "$@"', block = true, desc = "nvim" }]
+codium = [{ run = 'codium "$@"', orphan = true, desc = "VS Codium" }]
+
+[open]
+rules = [
+  { mime = "text/*", use = ["edit", "codium"] },
+  { name = "*.{c,cpp,rs,cs,py,sh,md,toml,yaml,json}", use = ["edit", "codium"] }
+]

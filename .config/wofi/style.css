@@ -1,0 +1,113 @@
+/* ~/.config/wofi/style.css
+   Темная современная тема для wofi (GTK/CSS)
+   Вдохновлено скриншотом пользователя, с цветными основными пунктами
+*/
+
+/* Глобальные параметры */
+* {
+  font-family: "Inter", "Noto Sans", sans-serif;
+  font-size: 15px;
+  color: #eee;
+}
+
+/* Окно запуска */
+window {
+  background-color: rgba(20, 22, 32, 0.88);    /* Тёмный полупрозрачный фон */
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 14px;
+  -gtk-box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+/* Верхний бар для ввода */
+entry,
+entry.view {
+  background-color: rgba(24,29,38,0.65);
+  color: #ffe;
+  padding: 12px 16px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+/* Список результатов */
+list,
+listview,
+listbox {
+  background-color: transparent;
+  spacing: 6px;
+}
+
+/* Элемент списка */
+list row {
+  padding: 12px 16px;
+  border-radius: 9px;
+  color: #eee;
+  margin-bottom: 6px;
+  transition: background 0.18s, color 0.18s;
+}
+
+/* Основные пункты меню — можно задать цвет для важных ярлыков, например приложения */
+list row[keyword-app] {
+  background-color: rgba(92, 184, 252, 0.22);       /* голубой */
+  color: #222;
+}
+list row[keyword-term] {
+  background-color: rgba(98, 188, 108, 0.21);       /* зелёный */
+  color: #222;
+}
+list row[keyword-media] {
+  background-color: rgba(196, 136, 250, 0.15);      /* фиолетовый */
+  color: #222;
+}
+list row[keyword-system] {
+  background-color: rgba(249, 184, 56, 0.14);       /* жёлтый */
+  color: #222;
+}
+
+/* Подсветка выбранного или наведённого */
+list row:selected,
+list row:highlighted {
+  background-color: rgba(240, 240, 240, 0.13);
+  color: #fff;
+  border: 2px solid rgba(220,230,250,0.26);
+  box-shadow: 0 2px 12px rgba(32,96,210,0.10);
+}
+
+/* Текстовые метки, описание, подсказки */
+label {
+  color: #ddd;
+}
+
+/* Иконки */
+image {
+  min-width: 24px;
+  min-height: 24px;
+  margin-right: 12px;
+  border-radius: 7px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.10);
+}
+
+/* Подсказки внизу */
+tooltip {
+  background-color: rgba(40,44,60,0.19);
+  color: #dde;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  border: 1px solid rgba(92, 184, 252, 0.14);
+}
+
+/* Скроллбар — современный стиль, незаметный */
+scrollbar {
+  background-color: rgba(60, 66, 84, 0.28);
+  border-radius: 8px;
+  min-width: 7px;
+}
+scrollbar slider {
+  background-color: rgba(92, 184, 252, 0.19);
+  border-radius: 7px;
+}
+
