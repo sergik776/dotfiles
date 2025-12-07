@@ -28,23 +28,12 @@
         "memory",
         "temperature",
         "backlight",
-        "keyboard-state",
         "battery",
         "battery#bat2",
         "clock",
         "hyprland/language",
-        "tray",
-        "custom/power"
+        "tray"
     ],
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     "hyprland/language": {
         "format": "{}",
         "format-fi": "FI",
@@ -153,18 +142,6 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/power": {
-        "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
     },
     "bluetooth": {
     "format": "{icon}",
