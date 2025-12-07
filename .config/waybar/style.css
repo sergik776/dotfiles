@@ -32,9 +32,7 @@ window#waybar.chromium {
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
 }
@@ -42,15 +40,13 @@ button {
 
 #workspaces button {
     background-color: #1eb09f;
-    color: #ffffff;
     border-radius: 10px;
-    margin: 2px;
+    margin: 1px;
     padding: 0 7;
 }
 
 #workspaces button.focused {
   background-color: rgba(255, 0, 255, 1);
-  box-shadow: inset 0 -3px @text;
 }
 
 #workspaces button.urgent {
@@ -59,7 +55,6 @@ button {
 
 #mode {
     background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
 }
 
 
@@ -80,8 +75,9 @@ button {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
+    padding: 0 5px;
     color: #ffffff;
+	/*background-color: #FF0000;*/
 }
 
 #window,
@@ -96,21 +92,17 @@ button {
 }
 
 #clock {
-    margin: 5px;
 }
 
 #language {
   font-weight: bold;
-  margin: 5px;
 }
 
 #battery {
-  margin: 5px;
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: green;
 }
 
 @keyframes blink {
@@ -123,7 +115,6 @@ button {
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
@@ -132,8 +123,6 @@ button {
 }
 
 #power-profiles-daemon {
-    padding-right: 15px;
-    margin: 5px;
 }
 
 #power-profiles-daemon.performance {
@@ -149,28 +138,21 @@ button {
 }
 
 label:focus {
-    margin: 5px;
 }
 
 #cpu {
-    color: #ffffff;
-    margin: 5px;
 }
 
 #memory {
-    margin: 5px;
 }
 
 #disk {
-    margin: 5px;
 }
 
 #backlight {
-    margin: 5px;
 }
 
 #network {
-    margin: 5px;
 }
 
 #network.disconnected {
@@ -178,8 +160,6 @@ label:focus {
 }
 
 #pulseaudio {
-    color: #ffffff;
-    margin: 5px;
 }
 
 #pulseaudio.muted {
@@ -187,8 +167,6 @@ label:focus {
 }
 
 #wireplumber {
-    color: #ffffff;
-    margin: 5px;
 }
 
 #wireplumber.muted {
@@ -200,7 +178,6 @@ label:focus {
     color: #2a5c45;
     min-width: 100px;
     border-radius: 10px; 
-    margin: 5px;
 }
 
 #custom-media.custom-spotify {
@@ -212,7 +189,6 @@ label:focus {
 }
 
 #temperature {
-    margin: 5px;
 }
 
 #temperature.critical {
@@ -235,7 +211,6 @@ label:focus {
 }
 
 #idle_inhibitor.activated {
-    color: #ffffff;
 }
 
 #mpd {
@@ -256,18 +231,12 @@ label:focus {
 }
 
 #language {
-    color: #ffffff;
-    padding: 0 5px;
-    min-width: 16px;
 }
 
 #keyboard-state {
-    color: #ffffff;
-    min-width: 16px;
 }
 
 #keyboard-state > label {
-    padding: 0 5px;
 }
 
 #keyboard-state > label.locked {
@@ -283,11 +252,9 @@ label:focus {
 }
 
 #privacy {
-    padding: 0;
 }
 
 #privacy-item {
-    color: white;
 }
 
 #privacy-item.screenshare {
