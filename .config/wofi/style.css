@@ -1,113 +1,102 @@
-/* ~/.config/wofi/style.css
-   Темная современная тема для wofi (GTK/CSS)
-   Вдохновлено скриншотом пользователя, с цветными основными пунктами
-*/
+@define-color primary #D1A260;
+@define-color secondary #696969;
+@define-color background #1C1B1F;
+@define-color surface #212121;
+@define-color on-primary #FFF3DA;
+@define-color on-secondary #CAC4D0;
+@define-color on-background #E6E1E5;
+@define-color on-surface #F4EFF4;
 
-/* Глобальные параметры */
 * {
-  font-family: "Inter", "Noto Sans", sans-serif;
-  font-size: 15px;
-  color: #eee;
+    font-family: "Iosevka Nerd Font", monospace;
+    font-weight: bold;
+    font-size: 14px;
 }
 
-/* Окно запуска */
+*:selected {
+    color: @on-primary;
+    background-color: @primary;
+}
+
+/* Window */
 window {
-  background-color: rgba(20, 22, 32, 0.88);    /* Тёмный полупрозрачный фон */
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.07);
-  padding: 14px;
-  -gtk-box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    margin: 0px;
+    padding: 10px;
+    border: 3px solid @on-primary;
+    border-radius: 7px;
+    background-color: @background;
+    animation: slideIn 0.1s ease-in-out both;
 }
 
-/* Верхний бар для ввода */
-entry,
-entry.view {
-  background-color: rgba(24,29,38,0.65);
-  color: #ffe;
-  padding: 12px 16px;
-  font-size: 18px;
-  border-radius: 8px;
-  border: none;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+/* Slide In */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-/* Список результатов */
-list,
-listview,
-listbox {
-  background-color: transparent;
-  spacing: 6px;
+/* Inner Box */
+#inner-box {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: @surface;
+    animation: fadeIn 0.1s ease-in-out both;
 }
 
-/* Элемент списка */
-list row {
-  padding: 12px 16px;
-  border-radius: 9px;
-  color: #eee;
-  margin-bottom: 6px;
-  transition: background 0.18s, color 0.18s;
+/* Fade In */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-/* Основные пункты меню — можно задать цвет для важных ярлыков, например приложения */
-list row[keyword-app] {
-  background-color: rgba(92, 184, 252, 0.22);       /* голубой */
-  color: #222;
-}
-list row[keyword-term] {
-  background-color: rgba(98, 188, 108, 0.21);       /* зелёный */
-  color: #222;
-}
-list row[keyword-media] {
-  background-color: rgba(196, 136, 250, 0.15);      /* фиолетовый */
-  color: #222;
-}
-list row[keyword-system] {
-  background-color: rgba(249, 184, 56, 0.14);       /* жёлтый */
-  color: #222;
+/* Outer Box */
+#outer-box {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: @surface;
 }
 
-/* Подсветка выбранного или наведённого */
-list row:selected,
-list row:highlighted {
-  background-color: rgba(240, 240, 240, 0.13);
-  color: #fff;
-  border: 2px solid rgba(220,230,250,0.26);
-  box-shadow: 0 2px 12px rgba(32,96,210,0.10);
+/* Scroll */
+#scroll {
+    margin: 0px;
+    padding: 10px;
+    border: none;
 }
 
-/* Текстовые метки, описание, подсказки */
-label {
-  color: #ddd;
+/* Input */
+#input {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    color: @on-background;
+    background-color: @secondary;
+    animation: fadeIn 0.1s ease-in-out both;
 }
 
-/* Иконки */
-image {
-  min-width: 24px;
-  min-height: 24px;
-  margin-right: 12px;
-  border-radius: 7px;
-  box-shadow: 0 0 6px rgba(0,0,0,0.10);
+/* Text */
+#text {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    color: @on-surface;
+    animation: fadeIn 0.1s ease-in-out both;
 }
 
-/* Подсказки внизу */
-tooltip {
-  background-color: rgba(40,44,60,0.19);
-  color: #dde;
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-size: 13px;
-  border: 1px solid rgba(92, 184, 252, 0.14);
+/* Selected Entry */
+#entry:selected {
+    background-color: @primary;
+    border-radius: 5px;
 }
 
-/* Скроллбар — современный стиль, незаметный */
-scrollbar {
-  background-color: rgba(60, 66, 84, 0.28);
-  border-radius: 8px;
-  min-width: 7px;
+#entry:selected #text {
+    color: @on-primary;
 }
-scrollbar slider {
-  background-color: rgba(92, 184, 252, 0.19);
-  border-radius: 7px;
-}
-

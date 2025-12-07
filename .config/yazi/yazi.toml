@@ -2,9 +2,10 @@
 [opener]
 edit = [{ run = 'nvim "$@"', block = true, desc = "nvim" }]
 codium = [{ run = 'codium "$@"', orphan = true, desc = "VS Codium" }]
-
+feh = [{ run = 'feh --scale-down -x --start-at "$@" .', orphan = true, desc = "feh" }]
 [open]
 rules = [
+  { mime = "image/*", use = ["feh"] },
   { mime = "text/*", use = ["edit", "codium"] },
-  { name = "*.{c,cpp,rs,cs,py,sh,md,toml,yaml,json}", use = ["edit", "codium"] }
+  { name = "*.{c,cpp,rs,cs,py,sh,md,toml,yaml,json,css}", use = ["edit", "codium"] }
 ]
