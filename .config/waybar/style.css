@@ -1,8 +1,7 @@
-@import "mocha.css";
 
 window#waybar {
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 1);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -23,7 +22,6 @@ window#waybar.float {
   box-shadow: inset 0 0 @text;
 }
 
-
 window#waybar.termite {
     background-color: #3F3F3F;
 }
@@ -41,17 +39,6 @@ button {
     border-radius: 0;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-  box-shadow: inset 0 -3px @accent;
-}
-
-
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
 
 #workspaces button {
     background-color: #1eb09f;
@@ -98,10 +85,6 @@ button:hover {
 }
 
 #window,
-#workspaces {
-    margin: 0 0px;
-}
-
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
@@ -113,22 +96,15 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
-    border-radius: 10px; 
     margin: 5px;
 }
 
 #language {
-  background-color: #00b093; /* например, бирюзовый фон */
   font-weight: bold;
-  border-radius: 10px; 
   margin: 5px;
 }
 
 #battery {
-  background-color: @green;
-  color: @base;
-  border-radius: 10px; 
   margin: 5px;
 }
 
@@ -157,59 +133,43 @@ button:hover {
 
 #power-profiles-daemon {
     padding-right: 15px;
-    border-radius: 10px; 
     margin: 5px;
 }
 
 #power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
+    color: #f53c3c;
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
+    color: #2980b9;
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
+    color: #2ecc71;
 }
 
 label:focus {
-    background-color: #000000;
-    border-radius: 10px; 
     margin: 5px;
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
-    border-radius: 10px; 
+    color: #ffffff;
     margin: 5px;
 }
 
 #memory {
-    background-color: #9b59b6;
-    border-radius: 10px; 
     margin: 5px;
 }
 
 #disk {
-    background-color: #964B00;
-    border-radius: 10px; 
     margin: 5px;
 }
 
 #backlight {
-    background-color: #90b1b1;
-    border-radius: 10px; 
     margin: 5px;
 }
 
 #network {
-    background-color: #2980b9;
-    border-radius: 10px; 
     margin: 5px;
 }
 
@@ -218,21 +178,16 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
-    border-radius: 10px; 
+    color: #ffffff;
     margin: 5px;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
     color: #2a5c45;
 }
 
 #wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
-    border-radius: 10px; 
+    color: #ffffff;
     margin: 5px;
 }
 
@@ -257,8 +212,6 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
-    border-radius: 10px; 
     margin: 5px;
 }
 
@@ -267,7 +220,6 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
 }
 
 #tray > .passive {
@@ -280,12 +232,10 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    color: #ffffff;
 }
 
 #mpd {
@@ -306,20 +256,14 @@ label:focus {
 }
 
 #language {
-    background: #00b093;
-    color: #740864;
+    color: #ffffff;
     padding: 0 5px;
-    margin: 0 5px;
     min-width: 16px;
 }
 
 #keyboard-state {
-    background: #79c42d;
-    color: #000000;
-    padding: 0 0px;
+    color: #ffffff;
     min-width: 16px;
-    border-radius: 10px; 
-    margin: 5px;
 }
 
 #keyboard-state > label {
@@ -343,7 +287,6 @@ label:focus {
 }
 
 #privacy-item {
-    padding: 0 5px;
     color: white;
 }
 
