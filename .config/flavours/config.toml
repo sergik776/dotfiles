@@ -1,0 +1,7 @@
+shell = "bash -lc '{}'"
+
+[[items]]
+file = "~/.config/waybar/colors.css"
+template = "waybar"
+rewrite = true
+hook = "pkill -SIGUSR2 waybar || true"
