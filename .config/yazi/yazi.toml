@@ -7,5 +7,5 @@ feh = [{ run = 'feh --scale-down -x --start-at "$@" .', orphan = true, desc = "f
 rules = [
   { mime = "image/*", use = ["feh"] },
   { mime = "text/*", use = ["edit", "codium"] },
-  { name = "*.{c,cpp,rs,cs,py,sh,md,toml,yaml,json,css}", use = ["edit", "codium"] }
+  { name = "*.{c,cpp,rs,cs,py,sh,md,toml,yaml,json,css,conf}", use = ["edit", "codium"] }
 ]

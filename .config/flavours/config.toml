@@ -10,3 +10,8 @@ hook = "pkill -SIGUSR2 waybar || true"
 file = "~/.config/wofi/colors.css"
 template = "wofi"
 rewrite = true
+
+[[items]]
+file = "~/.config/hypr/colors.conf"
+template = "hyprland"  # создадим шаблон
+rewrite = true
