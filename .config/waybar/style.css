@@ -1,7 +1,6 @@
 @import "/home/serhii/.config/waybar/colors.css";
 
-/* ВСЁ ОСТАЛЬНОЕ ОСТАЁТСЯ КАК БЫЛО */
-@define-color primary @base0D;  /* используй base16 цвета */
+@define-color primary @base0D;
 @define-color secondary @base03;
 @define-color background @base00;
 @define-color surface @base01;
@@ -9,7 +8,7 @@
 @define-color on-secondary @base05;
 @define-color on-background @base06;
 @define-color on-surface @base07;
-@define-color text @base05;     /* добавил @text, которого не хватало */
+@define-color text @base05;
 
 window#waybar {
   border-radius: 10px;

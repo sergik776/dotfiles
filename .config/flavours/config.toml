@@ -5,3 +5,8 @@ file = "~/.config/waybar/colors.css"
 template = "waybar"
 rewrite = true
 hook = "pkill -SIGUSR2 waybar || true"
+
+[[items]]
+file = "~/.config/wofi/colors.css"
+template = "wofi"
+rewrite = true

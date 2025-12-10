@@ -1,11 +1,16 @@
-@define-color primary #D1A260;
-@define-color secondary #696969;
-@define-color background #1C1B1F;
-@define-color surface #212121;
-@define-color on-primary #FFF3DA;
-@define-color on-secondary #CAC4D0;
-@define-color on-background #E6E1E5;
-@define-color on-surface #F4EFF4;
+@import "/home/serhii/.config/wofi/colors.css";
+
+@define-color primary @base0D;
+@define-color secondary @base03;
+@define-color background @base00;
+@define-color surface @base01;
+@define-color on-primary @base07;
+@define-color on-secondary @base05;
+@define-color on-background @base06;
+@define-color on-surface @base07;
+@define-color text @base05;
+
+
 
 * {
     font-family: "Iosevka Nerd Font", monospace;
