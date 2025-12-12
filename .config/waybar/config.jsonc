@@ -20,6 +20,7 @@
         "sway/window"
     ],
     "modules-right": [
+		"custom/supergfx",
         "idle_inhibitor",
         "pulseaudio",
         "network",
@@ -34,6 +35,19 @@
         "hyprland/language",
         "tray"
     ],
+	"custom/supergfx": {
+		"format": "{}",
+		"return-type": "json",
+	    "interval": 5,
+	    "exec": "~/.local/bin/gpustate.sh",
+	    "menu": "on-click",
+		"menu-file": "~/.config/waybar/gfx_menu.xml",
+		"menu-actions": {
+		"Integrated": "supergfxctl -m Integrated",
+		"Hybrid": "supergfxctl -m Hybrid",
+		"AsusMuxDgpu": "supergfxctl -m AsusMuxDgpu"
+		}
+	},
     "hyprland/language": {
         "format": "{}",
         "format-fi": "FI",
