@@ -10,3 +10,4 @@ waybar - status bar for wayland
 mako - notification service
 wofi - apps menu for wayland
 yazi - tui file manager
+gtk-3.0 - GUI toolkit

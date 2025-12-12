@@ -1,0 +1,43 @@
+
+/* Импорт цветов Waybar */
+@import url("/home/serhii/.config/gtk-3.0/colors.css");
+
+/* Основное меню */
+menu,
+menu > menuitem {
+    background-color: @background;
+    color: @text;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+/* Hover эффект */
+menuitem:hover,
+menuitem:prelight,
+menuitem:hover * {
+    background-color: @primary;
+    color: @on-primary;
+    border-radius: 6px;
+}
+
+/* Активный/выбранный пункт */
+menuitem:selected,
+menuitem:selected:hover {
+    background-color: @secondary;
+    color: @on-secondary;
+}
+
+/* Разделители */
+menu > separator,
+menuitem > separator {
+    background-color: @surface;
+    min-height: 1px;
+    margin: 2px 0;
+}
+
+/* Иконки в меню (если есть) */
+menuitem image {
+    -gtk-icon-shadow: none;
+}

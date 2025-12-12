@@ -4,9 +4,9 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 34, // Waybar height (to be removed for auto height)
     "mode": "dock",
-    "margin-right": 10,
-    "margin-top": 10,
-    "margin-left": 10,
+    "margin-right": 5,
+    "margin-top": 5,
+    "margin-left": 5,
     "gtk-layer-shell": true,
     "passthrough": true,
     "spacing": 0, // Gaps between modules (4px)

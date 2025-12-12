@@ -1,15 +1,10 @@
 shell = "bash -lc '{}'"
 
 [[items]]
-file = "~/.config/waybar/colors.css"
-template = "waybar"
+file = "~/.config/gtk-3.0/colors.css"
+template = "gtk-3.0"
 rewrite = true
 hook = "pkill -SIGUSR2 waybar || true"
-
-[[items]]
-file = "~/.config/wofi/colors.css"
-template = "wofi"
-rewrite = true
 
 [[items]]
 file = "~/.config/hypr/colors.conf"
