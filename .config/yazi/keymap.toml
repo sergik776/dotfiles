@@ -52,9 +52,9 @@ desc = "Move in relative steps"
 [[mgr.prepend_keymap]]
 on  = [ "g", "l" ]
 run = "plugin lazygit"
-desc = "Lazygit в foot, если есть .git"
+desc = "Lazygit"
 
 [[mgr.prepend_keymap]]
-on = ["<Enter>"] 
-run = "enter"
-desc = "Enter directory / open file"
+on  = [ "g", "d" ]
+run = "plugin lazydocker"
+desc = "Lazydocker"

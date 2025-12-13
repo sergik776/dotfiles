@@ -1,13 +1,12 @@
-# Sergik776 конфигурация Arch Linux
+# Sergik776 configurations Arch Linux
 
-На данный мемент содержит конфигурации для:
 On current time has configurations for:
 
-hyprland - tailing compositor
-hyprlock - screen locker for hyprland
-hyprpaper - utility for manage wallpers on hyprland
-waybar - status bar for wayland
-mako - notification service
-wofi - apps menu for wayland
-yazi - tui file manager
-gtk-3.0 - GUI toolkit
+hyprland - tailing compositor<br>
+hyprlock - screen locker for hyprland<br>
+hyprpaper - utility for manage wallpers on hyprland<br>
+waybar - status bar for wayland<br>
+mako - notification service<br>
+wofi - apps menu for wayland<br>
+yazi - tui file manager<br>
+gtk-3.0 - GUI toolkit<br>
