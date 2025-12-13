@@ -196,10 +196,6 @@ label:focus {
     border-radius: 10px; 
 }
 
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
 #custom-media.custom-vlc {
     background-color: #ffa000;
 }
@@ -257,14 +253,6 @@ label:focus {
 
 #keyboard-state > label.locked {
     background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-	background-color: transparent;
 }
 
 #privacy {
