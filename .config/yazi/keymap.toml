@@ -48,3 +48,13 @@ desc = "Move in relative steps"
 on = [ "9" ]
 run = "plugin relative-motions 9"
 desc = "Move in relative steps"
+
+[[mgr.prepend_keymap]]
+on  = [ "g", "l" ]
+run = "plugin lazygit"
+desc = "Lazygit в foot, если есть .git"
+
+[[mgr.prepend_keymap]]
+on = ["<Enter>"] 
+run = "enter"
+desc = "Enter directory / open file"

@@ -1,14 +1,19 @@
-
 [opener]
 edit = [{ run = 'nvim "$@"', block = true, desc = "nvim" }]
 mpv = [{ run = 'mpv "$@" & disown', orphan = true, desc = "mpv" }]
 vlc = [{ run = 'vlc "$@" & disown', orphan = true, desc = "vlc" }]
 codium = [{ run = 'codium "$@"', orphan = true, desc = "VS Codium" }]
 feh = [{ run = 'feh --scale-down -x --start-at "$@" .', orphan = true, desc = "feh" }]
+tw = [{ run = 'foot -e tw "$@"', orphan = true, desc = "tw" }]  # ← ОДИН tw
+calc = [{ run = 'libreoffice --calc "$@" & disown', orphan = true, desc = "LibreOffice Calc" }]  # ← НОВОЕ
+
 [open]
 rules = [
   { mime = "image/*", use = ["feh"] },
   { mime = "text/*", use = ["edit", "codium"] },
   { name = "*.{c,cpp,rs,cs,py,sh,md,toml,yaml,json,css,conf}", use = ["edit", "codium"] },
-  { name = "*.{mp4,avi}", use = ["vlc", "mpv"] }
+  { name = "*.{mp4,avi}", use = ["vlc", "mpv"] },
+  { name = "*.{csv}", use = ["tw", "calc", "edit"] },  # ← Добавлен calc
+  { name = "*.{ods,xlsx,ods}", use = ["calc", "tw"] },  # ← Новое правило для таблиц
 ]
+
