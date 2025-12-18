@@ -1,104 +1,49 @@
-{
-    "layer": "top", 
-    "position": "top", 
-    "height": 34, 
+[
+ {
+    "layer": "top",
+    "position": "bottom",
+    "height": 34,
     "mode": "dock",
     "margin-right": 5,
-    "margin-top": 5,
+    "margin-bottom": 5,
     "margin-left": 5,
     "gtk-layer-shell": true,
     "passthrough": true,
-    "spacing": 0, 
-
-
+    "spacing": 0,
 
     "modules-left": [
-        "hyprland/workspaces"
+      "custom/supergfx",
+	  "power-profiles-daemon",
+	  "custom/nvidia"
+    ],
+    "modules-center": [
+      "hyprland/workspaces"
     ],
     "modules-right": [
-		"custom/supergfx",
-        "idle_inhibitor",
-        "pulseaudio",
-        "network",
-        "power-profiles-daemon",
-		"backlight",
-        "battery",
-        "battery#bat2",
-        "clock",
-        "hyprland/language",
-        "tray"
+		"tray"
     ],
-	"modules-center": [
-		"temperature",
-		"cpu",
-		"memory"
-	],
-
-
-
 	"custom/supergfx": {
-		"format": "{}",
+      "format": "{}",
+      "return-type": "json",
+      "interval": 5,
+      "exec": "~/.local/bin/gpustate.sh",
+      "menu": "on-click",
+      "menu-file": "~/.config/waybar/gfx_menu.xml",
+      "menu-actions": {
+        "Integrated": "supergfxctl -m Integrated",
+        "Hybrid": "supergfxctl -m Hybrid",
+        "AsusMuxDgpu": "supergfxctl -m AsusMuxDgpu"
+      }
+    },
+	"custom/nvidia": {
+		"format": "󰕈 {}",
+		"tooltip-format": "{text}",
+		"exec": "~/LinuxScripts/nvidia-waybar.sh",
 		"return-type": "json",
-	    "interval": 5,
-	    "exec": "~/.local/bin/gpustate.sh",
-	    "menu": "on-click",
-		"menu-file": "~/.config/waybar/gfx_menu.xml",
-		"menu-actions": {
-		"Integrated": "supergfxctl -m Integrated",
-		"Hybrid": "supergfxctl -m Hybrid",
-		"AsusMuxDgpu": "supergfxctl -m AsusMuxDgpu"
-		}
+		"interval": 2,
+		"on-click": "ghostty -e nvtop"
 	},
-    "hyprland/language": {
-        "format": "{}",
-        "format-fi": "FI",
-        "format-ru": "RU",
-        "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-         "icon-size": 15,
-        "spacing": 5
-    },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d-%m-%Y}"
-    },
-    "cpu": {
-        "format": " {usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": " {used}Gb"
-    },
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-full": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {time}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "power-profiles-daemon": {
+	"power-profiles-daemon": {
       "format": "{icon}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
       "tooltip": true,
@@ -108,39 +53,119 @@
         "balanced": "",
         "power-saver": ""
       }
+    }
+  },
+  {
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "mode": "dock",
+    "margin-right": 5,
+    "margin-top": 5,
+    "margin-left": 5,
+    "gtk-layer-shell": true,
+    "passthrough": true,
+    "spacing": 0,
+
+    "modules-left": [
+		"temperature",
+		"cpu",
+		"memory"
+    ],
+    "modules-right": [
+      "idle_inhibitor",
+      "pulseaudio",
+      "backlight",
+      "battery"
+    ],
+    "modules-center": [
+      "clock",
+	  "hyprland/language"
+    ],
+
+    "hyprland/language": {
+      "format": "{}",
+      "format-fi": "FI",
+      "format-ru": "RU",
+      "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
+    },
+    "tray": {
+      "icon-size": 15,
+      "spacing": 5
+    },
+    "clock": {
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format-alt": "{:%d-%m-%Y}"
+    },
+    "cpu": {
+      "format": " {usage}%",
+      "tooltip": false
+    },
+    "memory": {
+      "format": " {used}Gb"
+    },
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": ["", "", ""]
+    },
+    "backlight": {
+      "format": "{icon} {percent}%",
+      "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-full": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-alt": "{icon} {time}",
+      "format-icons": ["", "", "", "", ""]
     },
     "network": {
-        "format-wifi": " {signalStrength}%",
-        "format-ethernet": " {ipaddr}/{cidr}",
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "format-linked": " {ifname} (No IP)",
-        "format-disconnected": "⚠ Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+      "format-wifi": " {signalStrength}%",
+      "format-ethernet": " {ipaddr}/{cidr}",
+      "tooltip-format": "{ifname} via {gwaddr}",
+      "format-linked": " {ifname} (No IP)",
+      "format-disconnected": "⚠ Disconnected",
+      "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+      "format": "{volume}% {icon} {format_source}",
+      "format-bluetooth": "{volume}% {icon} {format_source}",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": " {format_source}",
+      "format-source": "{volume}% ",
+      "format-source-muted": "",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
     },
     "bluetooth": {
-		"format": "{icon}",
-		"format-icons": {
+      "format": "{icon}",
+      "format-icons": {
         "enabled": "",
         "disabled": ""
-		},
-		"on-click": "blueman-manager"
-	}
-}
+      },
+      "on-click": "blueman-manager"
+    }
+  }
+]
+

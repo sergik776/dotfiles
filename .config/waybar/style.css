@@ -82,6 +82,7 @@ button {
 #temperature,
 #backlight,
 #network,
+#supergfx,
 #pulseaudio,
 #wireplumber,
 #custom-media,
@@ -89,6 +90,7 @@ button {
 #mode,
 #idle_inhibitor,
 #scratchpad,
+#custom-supergfx
 #power-profiles-daemon,
 #mpd {
     padding: 0 5px;
@@ -117,6 +119,12 @@ button {
 #battery {
 }
 
+#custom-supergfx {
+    margin-left: 5px; /* или margin-left / margin */
+	margin-right: 10px;
+}
+
+
 #battery.charging, #battery.plugged {
     color: green;
 }
@@ -139,6 +147,7 @@ button {
 }
 
 #power-profiles-daemon {
+	margin-right: 10px;
 }
 
 #power-profiles-daemon.performance {
