@@ -12,9 +12,8 @@
     "spacing": 0,
 
     "modules-left": [
-      "custom/supergfx",
-	  "power-profiles-daemon",
-	  "custom/nvidia"
+		"custom/supergfx",
+		"power-profiles-daemon"	
     ],
     "modules-center": [
       "hyprland/workspaces"
@@ -35,14 +34,6 @@
         "AsusMuxDgpu": "supergfxctl -m AsusMuxDgpu"
       }
     },
-	"custom/nvidia": {
-		"format": "󰕈 {}",
-		"tooltip-format": "{text}",
-		"exec": "~/LinuxScripts/nvidia-waybar.sh",
-		"return-type": "json",
-		"interval": 2,
-		"on-click": "ghostty -e nvtop"
-	},
 	"power-profiles-daemon": {
       "format": "{icon}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -68,10 +59,23 @@
     "spacing": 0,
 
     "modules-left": [
-		"temperature",
-		"cpu",
-		"memory"
+		"group/hardware",
+		"group/gpu"
     ],
+	"group/gpu": {
+		"orientation": "horizontal",
+		"modules": [
+			"custom/nvidia"
+		]
+	},	
+	"group/hardware": {
+		"orientation": "horizontal",
+		"modules": [
+			"temperature",
+			"cpu",
+			"memory"
+		]
+	},
     "modules-right": [
       "idle_inhibitor",
       "pulseaudio",
@@ -82,7 +86,14 @@
       "clock",
 	  "hyprland/language"
     ],
-
+	"custom/nvidia": {
+		"format": "{}",
+		"tooltip-format": "{text}",
+		"exec": "~/.csh/nvidia-waybar.sh",
+		"return-type": "json",
+		"interval": 2,
+		"on-click": "ghostty -e nvtop"
+	},
     "hyprland/language": {
       "format": "{}",
       "format-fi": "FI",
@@ -98,7 +109,7 @@
     },
     "tray": {
       "icon-size": 15,
-      "spacing": 5
+      "spacing": 10
     },
     "clock": {
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -114,7 +125,7 @@
     "temperature": {
       "critical-threshold": 80,
       "format": "{icon} {temperatureC}°C",
-      "format-icons": ["", "", ""]
+      "format-icons": [""]
     },
     "backlight": {
       "format": "{icon} {percent}%",

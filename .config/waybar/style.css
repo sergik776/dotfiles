@@ -21,6 +21,19 @@ window#waybar {
   border: 1px solid @secondary;
 }
 
+#hardware {
+    background-color: @base02;
+	border-radius: 8px;
+	margin: 4px;
+}
+
+#gpu {
+    background-color: @base02;
+	border-radius: 8px;
+	margin: 4px;
+	padding: 0px 5px;
+}
+
 window#waybar.float {
   background-color: transparent;
   border-radius: 10px;
@@ -58,7 +71,7 @@ button {
     background-color: @secondary;
     border-radius: 10px;
     margin: 1px;
-    padding: 0 7;
+    padding: 0px 7px;
 }
 
 #workspaces button.focused {

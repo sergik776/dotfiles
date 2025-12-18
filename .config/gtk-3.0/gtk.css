@@ -15,7 +15,7 @@ menu > menuitem {
 
 /* Hover эффект */
 menuitem:hover,
-menuitem:prelight,
+menuitem:hover,
 menuitem:hover * {
     background-color: @primary;
     color: @on-primary;
